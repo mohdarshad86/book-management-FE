@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './register.css'
+import axios from 'axios'
 
 const Register = () => {
 
@@ -21,6 +22,18 @@ const Register = () => {
         })
     }
 
+    const register = () => {
+        const { title, name, email, number, address, password, reEnterPassword } = user
+
+        if (title && name && email && number && address && (password === reEnterPassword)) {
+           
+           axios.post('http://localhost:3001/register', user)
+            .then(res => console.log(res))
+        }
+        else alert('Invalid Input')
+        
+    }
+
     return (
         <div className="register">
             <h1>Register</h1>
@@ -29,9 +42,9 @@ const Register = () => {
             <input type="text" name="email" value={user.email} placeholder="Enter Your Email" onChange={handleChange}></input>
             <input type="text" name="number" value={user.number} placeholder="Enter Your Mobile Number" onChange={handleChange}></input>
             <input type="text" name="address" value={user.address} placeholder="Enter Your Address" onChange={handleChange}></input>
-            <input type="password" name="password" value={user.password} placeholder="Enter Your Password" onChange={handleChange}></input>
-            <input type="password" name="reEnterPassword" value={user.reEnterPassword} placeholder="Re-Enter Your Password" onChange={handleChange}></input>
-            <div className="button">Register</div>
+            <input type="text" name="password" value={user.password} placeholder="Enter Your Password" onChange={handleChange}></input>
+            <input type="text" name="reEnterPassword" value={user.reEnterPassword} placeholder="Re-Enter Your Password" onChange={handleChange}></input>
+            <div className="button" onClick={register}>Register</div>
             <div>or</div>
             <div className="button">Login</div>
         </div>
