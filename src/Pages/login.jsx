@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import axios from 'axios'
 import './login.css'
 
 
@@ -23,7 +22,7 @@ const Login = () => {
 
         result = await result.json()
 
-        if (result.status == false) {
+        if (result.status === false) {
             alert(result.message)
 
         } else {
@@ -39,9 +38,9 @@ const Login = () => {
         <div className="login">
             <h3>Login</h3>
 
-            <div className="login-input">
+            <div className="auth-input">
                 <form>
-                    <label>email: </label>
+                    <label>Email: </label>
                     <input
                         type='email'
                         placeholder="email"
@@ -55,15 +54,15 @@ const Login = () => {
                         placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                    /><br /><br />
+                    /><br />
 
                     {/* <Link to="/getBook" > */}
                     <button className="btn" type="submit" onClick={logIn}>Login</button><br/>
                     {/* </Link> */}
 
-                    <span>
+                    <p className="dont-have">
                         Don't have an account ? <Link to="/signup">SignUp.</Link>
-                    </span>
+                    </p>
                 </form>
             </div>
 

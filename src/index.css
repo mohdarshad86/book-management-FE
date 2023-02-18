@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: lightblue;
+  background-color: rgb(17, 134, 223);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -18,7 +18,7 @@ code {
     monospace;
 }
 
-.logo{
+.logo {
   display: flex;
   margin-left: 20px;
   margin-top: 10px;

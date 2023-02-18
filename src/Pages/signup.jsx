@@ -26,7 +26,7 @@ const SignUp = () => {
 
         result = await result.json()
 
-        if (result.status == false) {
+        if (result.status === false) {
             alert(result.message)
 
         } else {
@@ -36,9 +36,7 @@ const SignUp = () => {
             navigate('/login')
         }
     }
-
-
-
+    
     return (
 
         <div className="signup">
@@ -46,44 +44,44 @@ const SignUp = () => {
                 SignUp
             </h3>
 
-            <div className="signup-input">
+            <div className="auth-input">
                 <form>
 
-                    <label>title: </label>
+                    <label>Title: </label>
                     <input
                         type='text'
-                        placeholder="title"
+                        placeholder="Enter title"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                     /><br />
-                    <label>name: </label>
+                    <label>Name: </label>
                     <input
                         type='text'
-                        placeholder="name"
+                        placeholder="Enter name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     /><br />
-                    <label>email: </label>
+                    <label>Email: </label>
                     <input
                         type='email'
-                        placeholder="email"
+                        placeholder="Enter email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     /><br />
-                    <label>phone: </label>
+                    <label>Phone: </label>
                     <input
                         type='tel'
-                        placeholder="Phone"
+                        placeholder="Enter phone"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                     /><br />
-                    <label>password: </label>
+                    <label>Password: </label>
                     <input
                         type='password'
-                        placeholder="Password"
+                        placeholder="Create password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                    /><br /><br />
+                    /><br />
 
                     {/* <label>address: </label>
                 <input
@@ -95,15 +93,12 @@ const SignUp = () => {
                     <button className="btn" type="submit" onClick={SignUp}>SignUp</button><br />
                     {/* </Link> */}
 
-                    <span>
-                        Already have an account ? <Link to="/login">Login.</Link>
-                    </span>
+                    <p className="dont-have">
+                        Already have an account ? <Link to="/">Login.</Link>
+                    </p >
 
                 </form>
             </div>
-
-
-
 
         </div>
     )
